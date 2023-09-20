@@ -1,4 +1,4 @@
-const personagem = document.getElementById('personagem');
+/*const personagem = document.getElementById('personagem');
 let posicaoHorizontal = 0;
 let posicaoVertical = 0;
 let posicaoDesce = 0;
@@ -23,4 +23,13 @@ function updatePersonagemPosition() {
 
 
     updatePersonagemPosition();
-  });
+  });*/
+
+let canvas = document.getElementById("personagem")
+let ctx = canvas.getContext('2d')
+
+let personagem = new Image()
+personagem.id="personagem"
+personagem.addEventListener('load',()=>{
+ctx.drawImage(personagem,0,0)
+})
