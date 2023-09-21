@@ -12,6 +12,13 @@ body {
     width: 120px;
     height: 120px;
     position: absolute;
-    display: flex;
-    align-content: flex-end;
+    background-color: antiquewhite;
   }
+
+  div {
+    width: 298px;
+    height: 192px;
+    overflow: hidden;
+    align-items: center;
+    margin: 350px;
+}

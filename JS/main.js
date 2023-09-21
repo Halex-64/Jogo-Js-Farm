@@ -1,35 +1,29 @@
-/*const personagem = document.getElementById('personagem');
-let posicaoHorizontal = 0;
-let posicaoVertical = 0;
-let posicaoDesce = 0;
-const step = 10;
+// Seleciona o elemento <img> no documento HTML.
+var img = document.querySelector('img');
 
-function updatePersonagemPosition() {
-    personagem.style.left = posicaoHorizontal + 'px';
-    personagem.style.top = posicaoVertical + 'px';
-    personagem.style.down = posicaoDesce + 'px';
-  }
-  
-  
-  document.addEventListener('keydown', (event) => {
-    switch (event.key) {
-      case 'ArrowLeft':
-        posicaoHorizontal -= step;
-        break;
-      case 'ArrowRight':
-        posicaoHorizontal += step;
-        break;
-    }
+// Variáveis para controlar a animação.
+var pos = 0;       // A posição atual na imagem sprite.
+var largura = 298; // A largura de cada quadro na imagem.
+var altura = 192;  // A altura de cada quadro na imagem.
 
+// Função para avançar para o próximo quadro da animação.
+function prox() {
+    // Calcula a posição vertical (linha) na imagem sprite.
+    var linha = Math.floor(pos / 8) * altura;
 
-    updatePersonagemPosition();
-  });*/
+    // Calcula a posição horizontal (coluna) na imagem sprite.
+    var coluna = pos % 4 * largura;
 
-let canvas = document.getElementById("personagem")
-let ctx = canvas.getContext('2d')
+    // Define a posição da imagem para mostrar o quadro correto.
+    img.style.marginTop = -linha + 'px';
+    img.style.marginLeft = -coluna + 'px';
 
-let personagem = new Image()
-personagem.id="personagem"
-personagem.addEventListener('load',()=>{
-ctx.drawImage(personagem,0,0)
-})
+    // Aumenta a posição atual após definir a posição da imagem.
+    pos++;
+
+    // Se atingiu o último quadro, volta para o primeiro.
+    if (pos == 10) pos = 0;
+}
+
+// Chama a função 'prox()' a cada 150 milissegundos para criar a animação.
+setInterval(prox, 150);
