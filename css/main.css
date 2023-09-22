@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Fiend;
+  src: url(../foul_fiend/Foul\ Fiend.ttf);
+}
+
 body {
     margin: 0;
     overflow: hidden;
