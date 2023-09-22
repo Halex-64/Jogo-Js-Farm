@@ -1,7 +1,7 @@
 @font-face {
     font-family: Fiend;
-    src: url(../foul_fiend/Foul\ Fiend.ttf);
-}
+    src: url(../img/fonte/Foul\ Fiend.ttf);
+  }
 
 body{
     background-image: url(../img/fundo3.jpg);
